@@ -9,3 +9,6 @@
   <li><%= item.product.title %> &times <%= item.quantity %></li>
   <% end %>
 </ui>
+
+<%= button_to 'カートを空にする', @cart, method: :delete,
+	confirm: '本当によいですか？' %>
