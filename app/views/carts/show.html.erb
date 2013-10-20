@@ -6,6 +6,6 @@
 
 <ui>
   <% @cart.line_items.each do |item| %>
-  <li><%= item.product.title %></li>
+  <li><%= item.product.title %> &times <%= item.quantity %></li>
   <% end %>
 </ui>
