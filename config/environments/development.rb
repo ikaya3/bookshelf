@@ -34,4 +34,17 @@ Depot::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # setting for sending e-mail.
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port:    587,
+    domain:  "example.com",
+    authentication: "plain",
+    user_name: "username",	# ここにはユーザ名を入れる
+    password:  "secret",	# ここにはパスワードを入れる
+    enable_starttls_auto: true,
+  }
 end

@@ -53,6 +53,8 @@ class OrdersController < ApplicationController
       if @order.save
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
+        # メール送信は行わない
+#       OrderNotifier.received(@order).deliver
         format.html {
           redirect_to store_url,
           notice: 'ご注文ありがとうございます' }
